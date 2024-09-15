@@ -1,0 +1,112 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
+
+/* Layout Variables */
+:root {
+  --primary: #1aac83;
+  --error: #e7195a;
+}
+
+/* Global Styles */
+body {
+  background: hsl(0, 0%, 95%);
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header a {
+  color: #333;
+  text-decoration: none;
+}
+
+.pages {
+  max-width: 1200px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+/* Reset some default browser styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Home component */
+.home {
+  display: flex;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 20px; /* Padding around the whole page */
+  gap: 20px; /* Space between workout list and form */
+}
+
+/* Workout container */
+.workouts {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Space between workout items */
+  width: 65%; /* Adjust width to be more compact */
+  overflow-y: auto; /* Allow scrolling if necessary */
+  max-height: 90vh; /* Ensure it doesn't exceed viewport height */
+}
+
+/* WorkoutDetails component */
+.workout-details {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.workout-details h4 {
+  font-size: 20px;
+  margin-bottom: 8px;
+  color: #000; /* Change title color to black */
+}
+
+.workout-details p {
+  margin: 6px 0;
+  font-size: 14px;
+}
+
+.workout-details strong {
+  font-weight: 600;
+}
+
+/* Form Container (future) */
+.form-container {
+  width: 30%; /* Adjust width as needed */
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .home {
+    flex-direction: column;
+  }
+
+  .workouts, .form-container {
+    width: 100%;
+    margin-right: 0; /* Remove margin on smaller screens */
+  }
+}
