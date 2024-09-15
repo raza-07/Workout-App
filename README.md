@@ -1,2 +1,2 @@
 # Workout-App
-This web application is done in MERN stack.
+This web application is written in MERN stack.
