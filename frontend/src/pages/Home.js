@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import WorkoutDetails from "../components/WorkoutDetails"
+import WorkoutForm from "../components/WorkoutForm"
 
 const Home = () => {
     // workouts has nothing first, setWorkouts will update it 
@@ -28,6 +29,7 @@ const Home = () => {
                     // Pass each workout as prop to WorkoutDetails component
                 ))}
             </div>
+            <WorkoutForm/>
         </div>
     )
 }

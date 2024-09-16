@@ -3,8 +3,10 @@
 
 /* Layout Variables */
 :root {
-  --primary: #1aac83;
+  --primary: #333; /* Updated primary color to black */
   --error: #e7195a;
+  --bg-light: #f8f9fa; /* Light background for form */
+  --bg-dark: #fff; /* Background color for cards */
 }
 
 /* Global Styles */
@@ -69,7 +71,7 @@ header a {
 
 /* WorkoutDetails component */
 .workout-details {
-  background-color: #fff;
+  background-color: var(--bg-dark);
   padding: 15px;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
@@ -90,13 +92,62 @@ header a {
   font-weight: 600;
 }
 
-/* Form Container (future) */
-.form-container {
-  width: 30%; /* Adjust width as needed */
-  background-color: #fff;
+/* Workout Form */
+.create {
+  width: 100%;
+  max-width: 500px; /* Restrict max width for better readability */
+  margin: 0 auto; /* Center the form */
+  background-color: var(--bg-light); /* Use light background */
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.create h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: var(--primary); /* Use primary color (black) for title */
+  border-bottom: 2px solid var(--primary); /* Underline for emphasis */
+  padding-bottom: 10px;
+}
+
+.create label {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #333; /* Dark color for labels */
+}
+
+.create input {
+  width: calc(100% - 22px); /* Adjust width for padding and border */
+  padding: 12px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.create button {
+  width: 100%;
+  padding: 12px;
+  background-color: #333; /* Use black for button background */
+  color: #fff;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.create button:hover {
+  background-color: #000; /* Darker black for hover effect */
+}
+
+.error {
+  color: var(--error);
+  font-size: 14px;
+  margin-top: 12px;
+  text-align: center; /* Center-align error message */
 }
 
 /* Responsive Design */
@@ -105,8 +156,7 @@ header a {
     flex-direction: column;
   }
 
-  .workouts, .form-container {
+  .workouts, .create {
     width: 100%;
-    margin-right: 0; /* Remove margin on smaller screens */
   }
 }
