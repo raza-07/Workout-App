@@ -1,3 +1,4 @@
+const { response } = require('express')
 const Workout = require('../models/WorkoutModel')
 const { default: mongoose } = require('mongoose')
 
@@ -28,7 +29,20 @@ const getworkout = async (req, res) => {
 // Create new Workout
 const createWorkout = async (req, res) => {
     const {title, load, reps} = req.body
+    let emptyField = []
 
+    if (!title){
+        emptyField.push('title')
+    }
+    if (!load){
+        emptyField.push('load')
+    } 
+    if (!reps){
+        emptyField.push('reps')
+    }
+    if (emptyField.length > 0) {
+        return res.status(400).json({error: 'Please fill all fields!', emptyFields: emptyField})
+      }
     // connect doc to db
     try{
         const workout = await Workout.create({title, load, reps})

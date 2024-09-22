@@ -5,7 +5,6 @@ import WorkoutForm from "../components/WorkoutForm"
 
 
 const Home = () => {
-    // workouts has nothing first, setWorkouts will update it 
     const {workouts, dispatch} = useWorkoutsContext()
 
     // Fetching data from API
@@ -21,15 +20,13 @@ const Home = () => {
             }  
         }
         fetchWorkouts()
-    }, [])
+    }, [dispatch])
 
     return(
         <div className="home">
             <div className="workouts">
                 {workouts && workouts.map((workout) =>( 
-                    // It will map each workout in all workouts 
                     <WorkoutDetails key={workout._id} workout={workout}/> 
-                    // Pass each workout as prop to WorkoutDetails component
                 ))}
             </div>
             <WorkoutForm/>

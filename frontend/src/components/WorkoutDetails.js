@@ -1,10 +1,11 @@
 
 import {useWorkoutsContext} from '../hooks/useWorkoutsContext'
+import {formatDistanceToNow} from 'date-fns/formatDistanceToNow'
 
 const WorkoutDetails = ({workout}) => {
     const {dispatch} = useWorkoutsContext()
 
-    const handleClick = async () => {
+    const handleClickDel = async () => {
         const response = await fetch('/api/workouts/' + workout._id, {
             method: 'DELETE'
         })
@@ -14,13 +15,16 @@ const WorkoutDetails = ({workout}) => {
             dispatch({type:'DELETE_WORKOUT', payload: json})
         }
     }
+
+
+
     return(
         <div className="workout-details">
             <h4>{workout.title}</h4>
             <p><strong>Load (kg): </strong>{workout.load}</p>
             <p><strong>Reps: </strong>{workout.reps}</p>
-            <p>{workout.createdAt}</p>
-            <span onClick = {handleClick}>delete</span>
+            <h5>{formatDistanceToNow(new Date(workout.createdAt), {addSuffix: true})}</h5>
+            <span className="material-symbols-outlined" onClick = {handleClickDel}>delete</span>
         </div>
     )
     

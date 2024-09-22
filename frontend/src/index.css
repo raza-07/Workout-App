@@ -3,10 +3,10 @@
 
 /* Layout Variables */
 :root {
-  --primary: #333; /* Updated primary color to black */
+  --primary: #333; 
   --error: #e7195a;
-  --bg-light: #f8f9fa; /* Light background for form */
-  --bg-dark: #fff; /* Background color for cards */
+  --bg-light: #f8f9fa; 
+  --bg-dark: #fff; 
 }
 
 /* Global Styles */
@@ -55,18 +55,18 @@ header a {
   display: flex;
   align-items: flex-start;
   min-height: 100vh;
-  padding: 20px; /* Padding around the whole page */
-  gap: 20px; /* Space between workout list and form */
+  padding: 20px; 
+  gap: 20px; 
 }
 
 /* Workout container */
 .workouts {
   display: flex;
   flex-direction: column;
-  gap: 15px; /* Space between workout items */
-  width: 65%; /* Adjust width to be more compact */
-  overflow-y: auto; /* Allow scrolling if necessary */
-  max-height: 90vh; /* Ensure it doesn't exceed viewport height */
+  gap: 15px; 
+  width: 65%; 
+  overflow-y: auto; 
+  max-height: 90vh; 
 }
 
 /* WorkoutDetails component */
@@ -75,19 +75,27 @@ header a {
   padding: 15px;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  position: relative; /* Allows absolute positioning for the delete button */
+  position: relative; 
 }
 
 .workout-details h4 {
   font-size: 20px;
   margin-bottom: 8px;
-  color: #000; /* Change title color to black */
+  color: #000; 
 }
 
 .workout-details p {
   margin: 6px 0;
   font-size: 14px;
 }
+
+.workout-details h5 {
+  font-size: x-small;
+  color: blue;        
+  margin-top: 4px;    
+  font-weight: normal; 
+}
+
 
 .workout-details strong {
   font-weight: 600;
@@ -105,16 +113,16 @@ header a {
 }
 
 .workout-details span:hover {
-  color: #ff1a1a; /* Darker red on hover */
+  color: #ff1a1a; 
 }
 
 
 /* Workout Form */
 .create {
   width: 100%;
-  max-width: 500px; /* Restrict max width for better readability */
-  margin: 0 auto; /* Center the form */
-  background-color: var(--bg-light); /* Use light background */
+  max-width: 500px; 
+  margin: 0 auto; 
+  background-color: var(--bg-light); 
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -123,8 +131,8 @@ header a {
 .create h3 {
   font-size: 24px;
   margin-bottom: 20px;
-  color: var(--primary); /* Use primary color (black) for title */
-  border-bottom: 2px solid var(--primary); /* Underline for emphasis */
+  color: var(--primary); 
+  border-bottom: 2px solid var(--primary); 
   padding-bottom: 10px;
 }
 
@@ -132,11 +140,11 @@ header a {
   display: block;
   font-size: 16px;
   margin-bottom: 8px;
-  color: #333; /* Dark color for labels */
+  color: #333; 
 }
 
 .create input {
-  width: calc(100% - 22px); /* Adjust width for padding and border */
+  width: calc(100% - 22px); 
   padding: 12px;
   margin-bottom: 16px;
   border: 1px solid #ccc;
@@ -147,7 +155,7 @@ header a {
 .create button {
   width: 100%;
   padding: 12px;
-  background-color: #333; /* Use black for button background */
+  background-color: #333;
   color: #fff;
   font-size: 18px;
   border: none;
@@ -157,14 +165,32 @@ header a {
 }
 
 .create button:hover {
-  background-color: #000; /* Darker black for hover effect */
+  background-color: #000;
 }
 
+/* Error message styling */
 .error {
   color: var(--error);
   font-size: 14px;
   margin-top: 12px;
-  text-align: center; /* Center-align error message */
+  text-align: left; 
+}
+
+/* Styling for input fields with error class */
+input.error {
+  border-color: var(--error); 
+  background-color: #ffe6e6; 
+  color: #333; 
+}
+
+/* Ensure normal text color when typing in the error field */
+input.error:focus {
+  color: #333; 
+}
+
+/* Optional: Add hover state for error fields if needed */
+input.error:hover {
+  border-color: #ff5c5c; 
 }
 
 /* Responsive Design */
