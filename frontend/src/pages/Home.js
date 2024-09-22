@@ -1,10 +1,12 @@
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
+import { useWorkoutsContext } from "../hooks/useWorkoutsContext"
 import WorkoutDetails from "../components/WorkoutDetails"
 import WorkoutForm from "../components/WorkoutForm"
 
+
 const Home = () => {
     // workouts has nothing first, setWorkouts will update it 
-    const [workouts, setWorkouts] = useState()
+    const {workouts, dispatch} = useWorkoutsContext()
 
     // Fetching data from API
     useEffect(() =>{
@@ -14,7 +16,8 @@ const Home = () => {
 
             // Updating if fetched data correctly 
             if (response.ok) {
-                setWorkouts(json)
+                dispatch({type: 'SET_WORKOUTS', payload: json})
+                
             }  
         }
         fetchWorkouts()
