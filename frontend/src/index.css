@@ -96,7 +96,6 @@ header a {
   font-weight: normal; 
 }
 
-
 .workout-details strong {
   font-weight: 600;
 }
@@ -115,7 +114,6 @@ header a {
 .workout-details span:hover {
   color: #ff1a1a; 
 }
-
 
 /* Workout Form */
 .create {
@@ -168,6 +166,80 @@ header a {
   background-color: #000;
 }
 
+/* Auth Forms (Signup & Login) */
+.auth-form {
+  width: 100%;
+  max-width: 400px;
+  margin: 100px auto;
+  padding: 20px;
+  background-color: var(--bg-light);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.auth-form h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: var(--primary);
+}
+
+.auth-form label {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #333;
+  text-align: left;
+}
+
+.auth-form input {
+  width: calc(100% - 22px);
+  padding: 12px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.auth-form button {
+  width: 100%;
+  padding: 12px;
+  background-color: #333;
+  color: #fff;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.auth-form button:hover {
+  background-color: #000;
+}
+
+/* Navbar styles */
+nav div a {
+  color: #333; 
+  text-decoration: none; 
+  margin: 0 10px;
+  padding: 8px 12px; 
+  border-radius: 4px; 
+  transition: background-color 0.3s ease; 
+}
+
+nav div a.active {
+  background-color: lightslategrey; 
+  color: #fff; 
+}
+
+nav div a:hover {
+  background-color: #f0f0f0; 
+  color: var(--primary); 
+}
+
+
+
+
 /* Error message styling */
 .error {
   color: var(--error);
@@ -183,12 +255,10 @@ input.error {
   color: #333; 
 }
 
-/* Ensure normal text color when typing in the error field */
 input.error:focus {
   color: #333; 
 }
 
-/* Optional: Add hover state for error fields if needed */
 input.error:hover {
   border-color: #ff5c5c; 
 }
@@ -203,5 +273,3 @@ input.error:hover {
     width: 100%;
   }
 }
-
-
