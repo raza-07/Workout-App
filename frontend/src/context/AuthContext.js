@@ -1,4 +1,4 @@
-const {createContext, useReducer} = require('react')
+const {createContext, useReducer, useEffect} = require('react')
 
 export const AuthContext = createContext()
 export const authReducer = (state, action) => {
@@ -18,6 +18,14 @@ export const AuthContextProvider = ({children}) => {
     const [state, dispatch] = useReducer(authReducer, {
         user: null
     })
+
+    // Update Auth Cotext to stay login if local storage having the user
+    useEffect(()=>{
+        const user = JSON.parse(localStorage.getItem('user'))
+        if (user){
+            dispatch({type: 'LOGIN', payload: user})
+        }
+    }, [dispatch])
     console.log('AuthContext State: ', state)
     return(
         <AuthContext.Provider value={{...state, dispatch}}>

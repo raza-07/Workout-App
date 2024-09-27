@@ -237,6 +237,29 @@ nav div a:hover {
   color: var(--primary); 
 }
 
+.logout {
+  background-color: transparent;
+  color: #333;
+  padding: 5px 10px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  font-size: 12px;
+  cursor: pointer;
+  margin-left: 20px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  float: right;
+}
+
+.logout:hover {
+  background-color: #f2f2f2;
+  transform: scale(1.05);
+}
+
+.logout:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.2);
+}
 
 
 
