@@ -1,5 +1,5 @@
 import { useState } from "react"
-import {useAuthContext} from "../hooks/useAuthContext"
+import {useAuthContext} from "./useAuthContext"
 
 export const useSignup =  ()=> {
     const [error, setError] = useState(null)
@@ -12,7 +12,7 @@ export const useSignup =  ()=> {
 
         const response = await fetch('/api/user/signup', {
             method: 'POST',
-            headers: {'Content-type': 'application/json'},
+            headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({email, password})
         })
         const json = await response.json()
@@ -25,9 +25,9 @@ export const useSignup =  ()=> {
             localStorage.setItem('user', JSON.stringify(json))
 
             // update auth context
-            // dispatch({type: 'LOGIN',payload: json})
+            dispatch({type: 'LOGIN', payload: json})
             setisLoading(false)
         }
     }
-    return{signup, error, isLoading}
+    return{ signup, isLoading, error }
 }
